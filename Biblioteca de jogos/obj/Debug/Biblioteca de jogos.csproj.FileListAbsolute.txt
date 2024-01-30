@@ -1,0 +1,12 @@
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\Biblioteca de jogos.exe.config
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\Biblioteca de jogos.exe
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\Biblioteca de jogos.pdb
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca de jogos.csproj.AssemblyReference.cache
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca_de_jogos.Properties.Resources.resources
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca de jogos.csproj.GenerateResource.cache
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca de jogos.csproj.CoreCompileInputs.cache
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca de jogos.exe
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca de jogos.pdb
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca_de_jogos.BuscarJogos.resources
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca_de_jogos.TelaInicial.resources
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca_de_jogos.MeusFavoritos.resources
