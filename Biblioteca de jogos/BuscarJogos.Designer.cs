@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarJogos));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnTelaInicial = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,15 +37,28 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.cbJogos = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.resultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblLancamento = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
+            this.resLancamento = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnFavoritar = new System.Windows.Forms.Button();
             this.lista = new System.Windows.Forms.ListBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.resultsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gameResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.imgGames = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameResultBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgGames)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -88,15 +102,15 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(12, 34);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(177, 29);
+            this.lblTitle.Size = new System.Drawing.Size(159, 29);
             this.lblTitle.TabIndex = 9;
-            this.lblTitle.Text = "Meus Favoritos";
+            this.lblTitle.Text = "Buscar Jogos";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(14, 153);
+            this.lblNome.Location = new System.Drawing.Point(19, 113);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(109, 16);
             this.lblNome.TabIndex = 11;
@@ -105,32 +119,44 @@
             // 
             // cbJogos
             // 
+            this.cbJogos.DataSource = this.resultsBindingSource;
+            this.cbJogos.DisplayMember = "name";
             this.cbJogos.FormattingEnabled = true;
-            this.cbJogos.Items.AddRange(new object[] {
-            "GTA",
-            "COD",
-            "LOL"});
-            this.cbJogos.Location = new System.Drawing.Point(146, 152);
+            this.cbJogos.Location = new System.Drawing.Point(151, 112);
             this.cbJogos.Name = "cbJogos";
-            this.cbJogos.Size = new System.Drawing.Size(121, 21);
+            this.cbJogos.Size = new System.Drawing.Size(144, 21);
             this.cbJogos.TabIndex = 12;
+            this.cbJogos.ValueMember = "name";
             this.cbJogos.SelectedIndexChanged += new System.EventHandler(this.cbJogos_SelectedIndexChanged);
             // 
-            // label1
+            // resultsBindingSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 191);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Nome do jogo:";
+            this.resultsBindingSource.DataMember = "results";
+            this.resultsBindingSource.DataSource = this.gameResultBindingSource;
+            // 
+            // gameResultBindingSource
+            // 
+            this.gameResultBindingSource.DataSource = typeof(Biblioteca_de_jogos.Models.GameResult);
+            // 
+            // gameDetailsBindingSource
+            // 
+            this.gameDetailsBindingSource.DataSource = typeof(Biblioteca_de_jogos.Models.GameDetails);
+            // 
+            // lblLancamento
+            // 
+            this.lblLancamento.AutoSize = true;
+            this.lblLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLancamento.Location = new System.Drawing.Point(19, 151);
+            this.lblLancamento.Name = "lblLancamento";
+            this.lblLancamento.Size = new System.Drawing.Size(95, 16);
+            this.lblLancamento.TabIndex = 13;
+            this.lblLancamento.Text = "Lançamento:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 228);
+            this.label2.Location = new System.Drawing.Point(19, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 16);
             this.label2.TabIndex = 14;
@@ -140,27 +166,26 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 265);
+            this.label3.Location = new System.Drawing.Point(19, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "Nome do jogo:";
             // 
-            // lblResult
+            // resLancamento
             // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResult.Location = new System.Drawing.Point(143, 191);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(69, 16);
-            this.lblResult.TabIndex = 17;
-            this.lblResult.Text = "Resultado";
+            this.resLancamento.AutoSize = true;
+            this.resLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resLancamento.Location = new System.Drawing.Point(148, 151);
+            this.resLancamento.Name = "resLancamento";
+            this.resLancamento.Size = new System.Drawing.Size(0, 16);
+            this.resLancamento.TabIndex = 17;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(143, 228);
+            this.label5.Location = new System.Drawing.Point(148, 188);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 16);
             this.label5.TabIndex = 18;
@@ -170,7 +195,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(143, 265);
+            this.label6.Location = new System.Drawing.Point(148, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 16);
             this.label6.TabIndex = 19;
@@ -178,7 +203,7 @@
             // 
             // btnFavoritar
             // 
-            this.btnFavoritar.Location = new System.Drawing.Point(82, 311);
+            this.btnFavoritar.Location = new System.Drawing.Point(151, 271);
             this.btnFavoritar.Name = "btnFavoritar";
             this.btnFavoritar.Size = new System.Drawing.Size(93, 23);
             this.btnFavoritar.TabIndex = 20;
@@ -189,25 +214,55 @@
             // lista
             // 
             this.lista.FormattingEnabled = true;
-            this.lista.Location = new System.Drawing.Point(336, 153);
+            this.lista.Location = new System.Drawing.Point(17, 311);
             this.lista.Name = "lista";
-            this.lista.Size = new System.Drawing.Size(166, 134);
+            this.lista.Size = new System.Drawing.Size(252, 82);
             this.lista.TabIndex = 21;
             this.lista.SelectedIndexChanged += new System.EventHandler(this.lista_SelectedIndexChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(35, 271);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(93, 23);
+            this.btnBuscar.TabIndex = 22;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // resultsBindingSource1
+            // 
+            this.resultsBindingSource1.DataMember = "results";
+            this.resultsBindingSource1.DataSource = this.gameResultBindingSource;
+            // 
+            // gameResultBindingSource1
+            // 
+            this.gameResultBindingSource1.DataSource = typeof(Biblioteca_de_jogos.Models.GameResult);
+            // 
+            // imgGames
+            // 
+            this.imgGames.Location = new System.Drawing.Point(292, 139);
+            this.imgGames.Name = "imgGames";
+            this.imgGames.Size = new System.Drawing.Size(271, 219);
+            this.imgGames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgGames.TabIndex = 23;
+            this.imgGames.TabStop = false;
             // 
             // BuscarJogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 412);
+            this.Controls.Add(this.imgGames);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lista);
             this.Controls.Add(this.btnFavoritar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.resLancamento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblLancamento);
             this.Controls.Add(this.cbJogos);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblSubtitle);
@@ -219,6 +274,12 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameResultBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgGames)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,13 +294,20 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ComboBox cbJogos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLancamento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label resLancamento;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnFavoritar;
         private System.Windows.Forms.ListBox lista;
+        private System.Windows.Forms.BindingSource gameDetailsBindingSource;
+        private System.Windows.Forms.BindingSource resultsBindingSource;
+        private System.Windows.Forms.BindingSource gameResultBindingSource;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.BindingSource resultsBindingSource1;
+        private System.Windows.Forms.BindingSource gameResultBindingSource1;
+        private System.Windows.Forms.PictureBox imgGames;
     }
 }

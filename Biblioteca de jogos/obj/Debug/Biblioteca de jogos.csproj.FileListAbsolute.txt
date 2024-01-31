@@ -10,3 +10,24 @@ C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca
 C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca_de_jogos.BuscarJogos.resources
 C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca_de_jogos.TelaInicial.resources
 C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca_de_jogos.MeusFavoritos.resources
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\RestSharp.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Buffers.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Memory.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Numerics.Vectors.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Text.Encodings.Web.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Text.Json.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.ValueTuple.dll
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\RestSharp.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Buffers.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Memory.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Numerics.Vectors.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Text.Encodings.Web.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Text.Json.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\bin\Debug\System.ValueTuple.xml
+C:\C#\ProjetosForms\Biblioteca de jogos\Biblioteca de jogos\obj\Debug\Biblioteca de jogos.csproj.CopyComplete
