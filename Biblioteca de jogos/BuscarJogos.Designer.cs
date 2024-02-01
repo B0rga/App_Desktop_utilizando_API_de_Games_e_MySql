@@ -41,11 +41,11 @@
             this.gameResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblLancamento = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.lblNota = new System.Windows.Forms.Label();
             this.resLancamento = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.resGenero = new System.Windows.Forms.Label();
+            this.resNota = new System.Windows.Forms.Label();
             this.btnFavoritar = new System.Windows.Forms.Button();
             this.lista = new System.Windows.Forms.ListBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -119,12 +119,13 @@
             // 
             // cbJogos
             // 
+            this.cbJogos.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.resultsBindingSource, "name", true));
             this.cbJogos.DataSource = this.resultsBindingSource;
             this.cbJogos.DisplayMember = "name";
             this.cbJogos.FormattingEnabled = true;
             this.cbJogos.Location = new System.Drawing.Point(151, 112);
             this.cbJogos.Name = "cbJogos";
-            this.cbJogos.Size = new System.Drawing.Size(144, 21);
+            this.cbJogos.Size = new System.Drawing.Size(175, 21);
             this.cbJogos.TabIndex = 12;
             this.cbJogos.ValueMember = "name";
             this.cbJogos.SelectedIndexChanged += new System.EventHandler(this.cbJogos_SelectedIndexChanged);
@@ -152,25 +153,25 @@
             this.lblLancamento.TabIndex = 13;
             this.lblLancamento.Text = "Lançamento:";
             // 
-            // label2
+            // lblGenero
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 16);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Nome do jogo:";
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.Location = new System.Drawing.Point(19, 188);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(62, 16);
+            this.lblGenero.TabIndex = 14;
+            this.lblGenero.Text = "Gênero:";
             // 
-            // label3
+            // lblNota
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 225);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 16);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Nome do jogo:";
+            this.lblNota.AutoSize = true;
+            this.lblNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNota.Location = new System.Drawing.Point(19, 225);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Size = new System.Drawing.Size(112, 16);
+            this.lblNota.TabIndex = 15;
+            this.lblNota.Text = "Nota da crítica:";
             // 
             // resLancamento
             // 
@@ -181,29 +182,27 @@
             this.resLancamento.Size = new System.Drawing.Size(0, 16);
             this.resLancamento.TabIndex = 17;
             // 
-            // label5
+            // resGenero
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(148, 188);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 16);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Resultado";
+            this.resGenero.AutoSize = true;
+            this.resGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resGenero.Location = new System.Drawing.Point(148, 188);
+            this.resGenero.Name = "resGenero";
+            this.resGenero.Size = new System.Drawing.Size(0, 16);
+            this.resGenero.TabIndex = 18;
             // 
-            // label6
+            // resNota
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(148, 225);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 16);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Resultado";
+            this.resNota.AutoSize = true;
+            this.resNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resNota.Location = new System.Drawing.Point(148, 225);
+            this.resNota.Name = "resNota";
+            this.resNota.Size = new System.Drawing.Size(0, 16);
+            this.resNota.TabIndex = 19;
             // 
             // btnFavoritar
             // 
-            this.btnFavoritar.Location = new System.Drawing.Point(151, 271);
+            this.btnFavoritar.Location = new System.Drawing.Point(151, 321);
             this.btnFavoritar.Name = "btnFavoritar";
             this.btnFavoritar.Size = new System.Drawing.Size(93, 23);
             this.btnFavoritar.TabIndex = 20;
@@ -214,15 +213,15 @@
             // lista
             // 
             this.lista.FormattingEnabled = true;
-            this.lista.Location = new System.Drawing.Point(17, 311);
+            this.lista.Location = new System.Drawing.Point(12, 350);
             this.lista.Name = "lista";
-            this.lista.Size = new System.Drawing.Size(252, 82);
+            this.lista.Size = new System.Drawing.Size(241, 43);
             this.lista.TabIndex = 21;
             this.lista.SelectedIndexChanged += new System.EventHandler(this.lista_SelectedIndexChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(35, 271);
+            this.btnBuscar.Location = new System.Drawing.Point(22, 321);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(93, 23);
             this.btnBuscar.TabIndex = 22;
@@ -241,10 +240,10 @@
             // 
             // imgGames
             // 
-            this.imgGames.Location = new System.Drawing.Point(292, 139);
+            this.imgGames.Location = new System.Drawing.Point(273, 223);
             this.imgGames.Name = "imgGames";
-            this.imgGames.Size = new System.Drawing.Size(271, 219);
-            this.imgGames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgGames.Size = new System.Drawing.Size(290, 170);
+            this.imgGames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgGames.TabIndex = 23;
             this.imgGames.TabStop = false;
             // 
@@ -257,11 +256,11 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lista);
             this.Controls.Add(this.btnFavoritar);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.resNota);
+            this.Controls.Add(this.resGenero);
             this.Controls.Add(this.resLancamento);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNota);
+            this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.lblLancamento);
             this.Controls.Add(this.cbJogos);
             this.Controls.Add(this.lblNome);
@@ -295,11 +294,11 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ComboBox cbJogos;
         private System.Windows.Forms.Label lblLancamento;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Label resLancamento;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label resGenero;
+        private System.Windows.Forms.Label resNota;
         private System.Windows.Forms.Button btnFavoritar;
         private System.Windows.Forms.ListBox lista;
         private System.Windows.Forms.BindingSource gameDetailsBindingSource;

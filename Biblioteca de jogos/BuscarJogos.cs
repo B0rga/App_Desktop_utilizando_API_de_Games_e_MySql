@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Biblioteca_de_jogos
 {
@@ -21,12 +22,22 @@ namespace Biblioteca_de_jogos
         {
             InitializeComponent();
             CenterToScreen(); // Inicia o form centralizado
-            cbJogos.DataSource = GameService.ObterGames(); // obtendo dados da API assim que o form inicia (e passando para a combobox)
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            // combo box obtendo dados da API assim que o form inicia
+            cbJogos.DataSource = GameService.ObterGames();
+            
+            // verificando se a API está funcionando
+            if (cbJogos.DataSource == null)
+            {
+                MessageBox.Show("Serviço indiponível no momento: RAWG API");
+            }
+            
+            // combobox iniciada sempre com um valor padrão
+            cbJogos.SelectedItem = null;
+            cbJogos.SelectedText = "Selecione um jogo";
         }
 
         public void abrirMeusFavoritos(object obj) // método para a iniciar outro form
@@ -86,15 +97,20 @@ namespace Biblioteca_de_jogos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // abaixo estou obtendo os dados da lista de todos os jogos adicionados 
-            GameList gameList = new GameList();
-            gameList = GameService.ObterDetalhes();
+            // objeto results recebendo os dados da API 
+            GameResult gameResult = new GameResult();
+            gameResult.results = GameService.ObterGames();
 
             // por meio deste for eu consigo trazer os dados correspondentes do jogo selecionado da combobox
             // e alterar os elementos do form de acordo com os detalhes desse jogo
             for(int i=0; i<=cbJogos.SelectedIndex; i++) {
-                resLancamento.Text = gameList.listaGames[i].lancamento;
-                imgGames.ImageLocation = gameList.listaGames[i].imagem;
+                resLancamento.Text = gameResult.results[i].released;
+                resNota.Text = gameResult.results[i].rating.ToString();
+                imgGames.ImageLocation = gameResult.results[i].background_image;
+                foreach(var gender in gameResult.results[i].genres)
+                {
+                    resGenero.Text = gender.name;
+                }
             }
         }
     }

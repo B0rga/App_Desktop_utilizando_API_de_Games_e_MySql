@@ -78,8 +78,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\GameDisponivel.cs" />
-    <Compile Include="Models\GameList.cs" />
     <Compile Include="Models\GameResult.cs" />
     <Compile Include="Service\GameService.cs" />
     <Compile Include="TelaInicial.cs">

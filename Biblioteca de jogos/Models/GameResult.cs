@@ -15,5 +15,12 @@ namespace Biblioteca_de_jogos.Models
         public string name { get; set; }
         public string released { get; set; }
         public string background_image { get; set; }
+        public List<Gender> genres { get; set; }
+        public double rating { get; set; }
+
+    }
+    internal class Gender
+    {
+        public string name { get; set; }
     }
 }
