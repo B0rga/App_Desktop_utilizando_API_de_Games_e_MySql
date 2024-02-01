@@ -11,11 +11,14 @@ namespace Biblioteca_de_jogos.Service
 {
     internal class GameService
     {
+        // propriedade da chave de acesso da API
         private static string key = "d0e502d9dafc45f7b3a5752029a91540";
-        public static List<GameDetails> ObterGames() // método para retornar os results (que servirão de data source para a combo box dos nomes dos jogos) 
+
+        // método para retornar os results (que servirão de data source para a combo box dos nomes dos jogos) 
+        public static List<GameDetails> ObterGames()
         {
             
-            var client = new RestClient($"https://api.rawg.io/api/games?key={key}");
+            var client = new RestClient($"https://api.rawg.io/api/games?key={key}&page=1&page_size=40");
             RestRequest request = new RestRequest("", Method.Get);
             var response = client.Execute(request);
 
@@ -28,7 +31,17 @@ namespace Biblioteca_de_jogos.Service
             {
                 return null;
             }
-            
+        }
+
+        // método para retornar os dados do jogo escolhido pelo usuário (com base em seu id) 
+        public static GameDetails ObterDetalhes(string id)
+        {
+            var client = new RestClient($"https://api.rawg.io/api/games/{id}?key={key}&page=1&page_size=40");
+            RestRequest request = new RestRequest("", Method.Get);
+            var response = client.Execute(request);
+
+            GameDetails gameDetails = JsonSerializer.Deserialize<GameDetails>(response.Content);
+            return gameDetails;
         }
     }
 }

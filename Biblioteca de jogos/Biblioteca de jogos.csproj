@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Models\GameResult.cs" />
     <Compile Include="Service\GameService.cs" />
+    <Compile Include="Service\PostService.cs" />
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -40,17 +40,20 @@ namespace Biblioteca_de_jogos
             cbJogos.SelectedText = "Selecione um jogo";
         }
 
-        public void abrirMeusFavoritos(object obj) // método para a iniciar outro form
+        // método para a iniciar outro form
+        public void abrirMeusFavoritos(object obj)
         {
             Application.Run(new MeusFavoritos()); // inicia o form MeusFavoritos
         }
 
-        public void abrirTelaInicial(object obg) // método para a iniciar outro form
+        // método para a iniciar outro form
+        public void abrirTelaInicial(object obg) 
         {
             Application.Run(new TelaInicial()); // inicia o form TelaInicial
         }
 
-        private void btnMeusFavoritos_Click(object sender, EventArgs e)
+        // botão do menu que leva até tela de favoritos
+        private void btnMeusFavoritos_Click(object sender, EventArgs e) 
         {
             this.Close(); // fechando tela atual
             t1 = new Thread(abrirMeusFavoritos); // instanciando o objeto da Thread e referencando o método que será utilizado
@@ -58,7 +61,8 @@ namespace Biblioteca_de_jogos
             t1.Start(); // executando a thread t1 (executando o form MeusFavoritos)
         }
 
-        private void btnTelaInicial_Click(object sender, EventArgs e)
+        // botão do menu que leva até tela inicial
+        private void btnTelaInicial_Click(object sender, EventArgs e) 
         {
             this.Close(); // fechando tela atual
             t1 = new Thread(abrirTelaInicial); // instanciando o objeto da Thread e referencando o método que será utilizado
@@ -76,41 +80,73 @@ namespace Biblioteca_de_jogos
             
         }
 
-        private void btnFavoritar_Click(object sender, EventArgs e)
-        {
-
-            if (lista.Items.Contains(cbJogos.Text)) // verificando se o item selecionado já não existe na lista
-            {
-                MessageBox.Show("Jogo já favoritado!");
-            }
-            else
-            {
-                
-                lista.Items.Add(cbJogos.Text); // adicionando valores da combobox para listbox
-            }
-        }
-
         private void lista_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
 
+        private void lblPubli_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFavoritar_Click(object sender, EventArgs e)
+        {
+            if (cbJogos.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um jogo!");
+            }
+            else
+            {
+                if (lista.Items.Contains(cbJogos.Text)) // verificando se o item selecionado já não existe na lista
+                {
+                    MessageBox.Show("Jogo já favoritado!");
+                }
+                else
+                {
+
+                    lista.Items.Add(cbJogos.Text); // adicionando valores da combobox para listbox
+                }
+            }
+        }
+
+        // botão para buscar dados do jogo selecionado da combobox
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // objeto results recebendo os dados da API 
-            GameResult gameResult = new GameResult();
-            gameResult.results = GameService.ObterGames();
+            // verificando se há um jogo selecionado
+            if(cbJogos.SelectedItem == null){
+                MessageBox.Show("Selecione um jogo!");
+            }
+            else
+            {
+                // variável "id" está recebendo o id associado ao nome do jogo exibido na combobox
+                string id = cbJogos.SelectedValue.ToString();
 
-            // por meio deste for eu consigo trazer os dados correspondentes do jogo selecionado da combobox
-            // e alterar os elementos do form de acordo com os detalhes desse jogo
-            for(int i=0; i<=cbJogos.SelectedIndex; i++) {
-                resLancamento.Text = gameResult.results[i].released;
-                resNota.Text = gameResult.results[i].rating.ToString();
-                imgGames.ImageLocation = gameResult.results[i].background_image;
-                foreach(var gender in gameResult.results[i].genres)
-                {
-                    resGenero.Text = gender.name;
-                }
+                // logo após eu utilizo este id para fazer a requisição dos dados deste jogo.
+                // O método será executado recebendo como parâmetro o return do método ObterDetalhes
+                // (que retorna o objeto gameDetails)
+                MostrarDados(GameService.ObterDetalhes(id));
+            }
+        }
+
+        // método que irá transformar os elementos do form nos dados do jogo selecionado
+        private void MostrarDados(GameDetails gameDetails) // ele traz como parâmetro o objeto gameDetails
+        {
+            resLancamento.Text = gameDetails.released;
+            resNota.Text = gameDetails.rating.ToString();
+            imgGames.ImageLocation = gameDetails.background_image;
+
+            foreach(var genre in gameDetails.genres)
+            {
+                resGenero.Text = genre.name;
+            }
+            foreach (var publi in gameDetails.publishers)
+            {
+                resPubli.Text = publi.name;
+            }
+            foreach (var dev in gameDetails.developers)
+            {
+                resDev.Text = dev.name;
             }
         }
     }
