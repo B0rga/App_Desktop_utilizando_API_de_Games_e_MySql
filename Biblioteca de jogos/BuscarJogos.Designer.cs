@@ -35,7 +35,6 @@
             this.btnMeusFavoritos = new System.Windows.Forms.ToolStripMenuItem();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
             this.resultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,7 +45,6 @@
             this.resGenero = new System.Windows.Forms.Label();
             this.resNota = new System.Windows.Forms.Label();
             this.btnFavoritar = new System.Windows.Forms.Button();
-            this.lista = new System.Windows.Forms.ListBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.resultsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gameResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -116,17 +114,6 @@
             this.lblTitle.TabIndex = 9;
             this.lblTitle.Text = "Buscar Jogos";
             // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(14, 112);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(109, 16);
-            this.lblNome.TabIndex = 11;
-            this.lblNome.Text = "Nome do jogo:";
-            this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
-            // 
             // resultsBindingSource
             // 
             this.resultsBindingSource.DataMember = "results";
@@ -144,37 +131,40 @@
             // 
             this.lblLancamento.AutoSize = true;
             this.lblLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLancamento.Location = new System.Drawing.Point(15, 141);
+            this.lblLancamento.Location = new System.Drawing.Point(25, 195);
             this.lblLancamento.Name = "lblLancamento";
             this.lblLancamento.Size = new System.Drawing.Size(95, 16);
             this.lblLancamento.TabIndex = 13;
             this.lblLancamento.Text = "Lançamento:";
+            this.lblLancamento.Visible = false;
             // 
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenero.Location = new System.Drawing.Point(14, 168);
+            this.lblGenero.Location = new System.Drawing.Point(24, 222);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(62, 16);
             this.lblGenero.TabIndex = 14;
             this.lblGenero.Text = "Gênero:";
+            this.lblGenero.Visible = false;
             // 
             // lblNota
             // 
             this.lblNota.AutoSize = true;
             this.lblNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNota.Location = new System.Drawing.Point(14, 262);
+            this.lblNota.Location = new System.Drawing.Point(24, 316);
             this.lblNota.Name = "lblNota";
             this.lblNota.Size = new System.Drawing.Size(112, 16);
             this.lblNota.TabIndex = 15;
             this.lblNota.Text = "Nota da crítica:";
+            this.lblNota.Visible = false;
             // 
             // resLancamento
             // 
             this.resLancamento.AutoSize = true;
             this.resLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resLancamento.Location = new System.Drawing.Point(154, 141);
+            this.resLancamento.Location = new System.Drawing.Point(164, 195);
             this.resLancamento.Name = "resLancamento";
             this.resLancamento.Size = new System.Drawing.Size(0, 16);
             this.resLancamento.TabIndex = 17;
@@ -183,7 +173,7 @@
             // 
             this.resGenero.AutoSize = true;
             this.resGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resGenero.Location = new System.Drawing.Point(154, 168);
+            this.resGenero.Location = new System.Drawing.Point(164, 222);
             this.resGenero.Name = "resGenero";
             this.resGenero.Size = new System.Drawing.Size(0, 16);
             this.resGenero.TabIndex = 18;
@@ -192,33 +182,25 @@
             // 
             this.resNota.AutoSize = true;
             this.resNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resNota.Location = new System.Drawing.Point(154, 262);
+            this.resNota.Location = new System.Drawing.Point(164, 316);
             this.resNota.Name = "resNota";
             this.resNota.Size = new System.Drawing.Size(0, 16);
             this.resNota.TabIndex = 19;
             // 
             // btnFavoritar
             // 
-            this.btnFavoritar.Location = new System.Drawing.Point(148, 303);
+            this.btnFavoritar.Location = new System.Drawing.Point(128, 149);
             this.btnFavoritar.Name = "btnFavoritar";
             this.btnFavoritar.Size = new System.Drawing.Size(93, 23);
             this.btnFavoritar.TabIndex = 20;
             this.btnFavoritar.Text = "Favoritar";
             this.btnFavoritar.UseVisualStyleBackColor = true;
+            this.btnFavoritar.Visible = false;
             this.btnFavoritar.Click += new System.EventHandler(this.btnFavoritar_Click);
-            // 
-            // lista
-            // 
-            this.lista.FormattingEnabled = true;
-            this.lista.Location = new System.Drawing.Point(12, 337);
-            this.lista.Name = "lista";
-            this.lista.Size = new System.Drawing.Size(241, 56);
-            this.lista.TabIndex = 21;
-            this.lista.SelectedIndexChanged += new System.EventHandler(this.lista_SelectedIndexChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(19, 303);
+            this.btnBuscar.Location = new System.Drawing.Point(17, 149);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(93, 23);
             this.btnBuscar.TabIndex = 22;
@@ -250,11 +232,12 @@
             this.cbJogos.DataSource = this.gameDetailsBindingSource1;
             this.cbJogos.DisplayMember = "name";
             this.cbJogos.FormattingEnabled = true;
-            this.cbJogos.Location = new System.Drawing.Point(155, 111);
+            this.cbJogos.Location = new System.Drawing.Point(17, 112);
             this.cbJogos.Name = "cbJogos";
-            this.cbJogos.Size = new System.Drawing.Size(175, 21);
+            this.cbJogos.Size = new System.Drawing.Size(204, 21);
             this.cbJogos.TabIndex = 24;
             this.cbJogos.ValueMember = "id";
+            this.cbJogos.SelectedIndexChanged += new System.EventHandler(this.cbJogos_SelectedIndexChanged_1);
             // 
             // gameDetailsBindingSource1
             // 
@@ -273,28 +256,30 @@
             // 
             this.lblDev.AutoSize = true;
             this.lblDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDev.Location = new System.Drawing.Point(14, 230);
+            this.lblDev.Location = new System.Drawing.Point(24, 284);
             this.lblDev.Name = "lblDev";
             this.lblDev.Size = new System.Drawing.Size(126, 16);
             this.lblDev.TabIndex = 25;
             this.lblDev.Text = "Desenvolvedora:";
+            this.lblDev.Visible = false;
             // 
             // lblPubli
             // 
             this.lblPubli.AutoSize = true;
             this.lblPubli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPubli.Location = new System.Drawing.Point(14, 198);
+            this.lblPubli.Location = new System.Drawing.Point(24, 252);
             this.lblPubli.Name = "lblPubli";
             this.lblPubli.Size = new System.Drawing.Size(95, 16);
             this.lblPubli.TabIndex = 26;
             this.lblPubli.Text = "Publicadora:";
+            this.lblPubli.Visible = false;
             this.lblPubli.Click += new System.EventHandler(this.lblPubli_Click);
             // 
             // resPubli
             // 
             this.resPubli.AutoSize = true;
             this.resPubli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resPubli.Location = new System.Drawing.Point(154, 198);
+            this.resPubli.Location = new System.Drawing.Point(164, 252);
             this.resPubli.Name = "resPubli";
             this.resPubli.Size = new System.Drawing.Size(0, 16);
             this.resPubli.TabIndex = 27;
@@ -303,7 +288,7 @@
             // 
             this.resDev.AutoSize = true;
             this.resDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resDev.Location = new System.Drawing.Point(153, 230);
+            this.resDev.Location = new System.Drawing.Point(163, 284);
             this.resDev.Name = "resDev";
             this.resDev.Size = new System.Drawing.Size(0, 16);
             this.resDev.TabIndex = 28;
@@ -320,7 +305,6 @@
             this.Controls.Add(this.cbJogos);
             this.Controls.Add(this.imgGames);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.lista);
             this.Controls.Add(this.btnFavoritar);
             this.Controls.Add(this.resNota);
             this.Controls.Add(this.resGenero);
@@ -328,7 +312,6 @@
             this.Controls.Add(this.lblNota);
             this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.lblLancamento);
-            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuStrip1);
@@ -359,7 +342,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnTelaInicial;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblLancamento;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.Label lblNota;
@@ -367,7 +349,6 @@
         private System.Windows.Forms.Label resGenero;
         private System.Windows.Forms.Label resNota;
         private System.Windows.Forms.Button btnFavoritar;
-        private System.Windows.Forms.ListBox lista;
         private System.Windows.Forms.BindingSource gameDetailsBindingSource;
         private System.Windows.Forms.BindingSource resultsBindingSource;
         private System.Windows.Forms.BindingSource gameResultBindingSource;

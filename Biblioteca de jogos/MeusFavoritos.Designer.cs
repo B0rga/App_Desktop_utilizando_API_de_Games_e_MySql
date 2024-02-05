@@ -36,6 +36,16 @@
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.listaFavoritos = new System.Windows.Forms.ListBox();
+            this.resDev = new System.Windows.Forms.Label();
+            this.resPubli = new System.Windows.Forms.Label();
+            this.lblPubli = new System.Windows.Forms.Label();
+            this.lblDev = new System.Windows.Forms.Label();
+            this.resNota = new System.Windows.Forms.Label();
+            this.resGenero = new System.Windows.Forms.Label();
+            this.resLancamento = new System.Windows.Forms.Label();
+            this.lblNota = new System.Windows.Forms.Label();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.lblLancamento = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +96,7 @@
             // 
             // btnRemover
             // 
-            this.btnRemover.Location = new System.Drawing.Point(448, 355);
+            this.btnRemover.Location = new System.Drawing.Point(367, 355);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(91, 23);
             this.btnRemover.TabIndex = 9;
@@ -99,15 +109,120 @@
             this.listaFavoritos.FormattingEnabled = true;
             this.listaFavoritos.Location = new System.Drawing.Point(19, 114);
             this.listaFavoritos.Name = "listaFavoritos";
-            this.listaFavoritos.Size = new System.Drawing.Size(391, 264);
+            this.listaFavoritos.Size = new System.Drawing.Size(229, 264);
             this.listaFavoritos.TabIndex = 10;
             this.listaFavoritos.SelectedIndexChanged += new System.EventHandler(this.listaFavoritos_SelectedIndexChanged);
+            // 
+            // resDev
+            // 
+            this.resDev.AutoSize = true;
+            this.resDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resDev.Location = new System.Drawing.Point(397, 244);
+            this.resDev.Name = "resDev";
+            this.resDev.Size = new System.Drawing.Size(0, 16);
+            this.resDev.TabIndex = 38;
+            // 
+            // resPubli
+            // 
+            this.resPubli.AutoSize = true;
+            this.resPubli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resPubli.Location = new System.Drawing.Point(398, 212);
+            this.resPubli.Name = "resPubli";
+            this.resPubli.Size = new System.Drawing.Size(0, 16);
+            this.resPubli.TabIndex = 37;
+            // 
+            // lblPubli
+            // 
+            this.lblPubli.AutoSize = true;
+            this.lblPubli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPubli.Location = new System.Drawing.Point(258, 212);
+            this.lblPubli.Name = "lblPubli";
+            this.lblPubli.Size = new System.Drawing.Size(95, 16);
+            this.lblPubli.TabIndex = 36;
+            this.lblPubli.Text = "Publicadora:";
+            // 
+            // lblDev
+            // 
+            this.lblDev.AutoSize = true;
+            this.lblDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDev.Location = new System.Drawing.Point(258, 244);
+            this.lblDev.Name = "lblDev";
+            this.lblDev.Size = new System.Drawing.Size(126, 16);
+            this.lblDev.TabIndex = 35;
+            this.lblDev.Text = "Desenvolvedora:";
+            // 
+            // resNota
+            // 
+            this.resNota.AutoSize = true;
+            this.resNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resNota.Location = new System.Drawing.Point(398, 276);
+            this.resNota.Name = "resNota";
+            this.resNota.Size = new System.Drawing.Size(0, 16);
+            this.resNota.TabIndex = 34;
+            // 
+            // resGenero
+            // 
+            this.resGenero.AutoSize = true;
+            this.resGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resGenero.Location = new System.Drawing.Point(398, 182);
+            this.resGenero.Name = "resGenero";
+            this.resGenero.Size = new System.Drawing.Size(0, 16);
+            this.resGenero.TabIndex = 33;
+            // 
+            // resLancamento
+            // 
+            this.resLancamento.AutoSize = true;
+            this.resLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resLancamento.Location = new System.Drawing.Point(398, 155);
+            this.resLancamento.Name = "resLancamento";
+            this.resLancamento.Size = new System.Drawing.Size(0, 16);
+            this.resLancamento.TabIndex = 32;
+            // 
+            // lblNota
+            // 
+            this.lblNota.AutoSize = true;
+            this.lblNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNota.Location = new System.Drawing.Point(258, 276);
+            this.lblNota.Name = "lblNota";
+            this.lblNota.Size = new System.Drawing.Size(112, 16);
+            this.lblNota.TabIndex = 31;
+            this.lblNota.Text = "Nota da crítica:";
+            // 
+            // lblGenero
+            // 
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.Location = new System.Drawing.Point(258, 182);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(62, 16);
+            this.lblGenero.TabIndex = 30;
+            this.lblGenero.Text = "Gênero:";
+            // 
+            // lblLancamento
+            // 
+            this.lblLancamento.AutoSize = true;
+            this.lblLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLancamento.Location = new System.Drawing.Point(259, 155);
+            this.lblLancamento.Name = "lblLancamento";
+            this.lblLancamento.Size = new System.Drawing.Size(95, 16);
+            this.lblLancamento.TabIndex = 29;
+            this.lblLancamento.Text = "Lançamento:";
             // 
             // MeusFavoritos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 412);
+            this.Controls.Add(this.resDev);
+            this.Controls.Add(this.resPubli);
+            this.Controls.Add(this.lblPubli);
+            this.Controls.Add(this.lblDev);
+            this.Controls.Add(this.resNota);
+            this.Controls.Add(this.resGenero);
+            this.Controls.Add(this.resLancamento);
+            this.Controls.Add(this.lblNota);
+            this.Controls.Add(this.lblGenero);
+            this.Controls.Add(this.lblLancamento);
             this.Controls.Add(this.listaFavoritos);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.lblSubtitle);
@@ -133,5 +248,15 @@
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.ListBox listaFavoritos;
+        private System.Windows.Forms.Label resDev;
+        private System.Windows.Forms.Label resPubli;
+        private System.Windows.Forms.Label lblPubli;
+        private System.Windows.Forms.Label lblDev;
+        private System.Windows.Forms.Label resNota;
+        private System.Windows.Forms.Label resGenero;
+        private System.Windows.Forms.Label resLancamento;
+        private System.Windows.Forms.Label lblNota;
+        private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.Label lblLancamento;
     }
 }

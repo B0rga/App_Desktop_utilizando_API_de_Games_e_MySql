@@ -1,9 +1,11 @@
 ﻿using Biblioteca_de_jogos.Models;
+using Biblioteca_de_jogos.Repository;
 using Biblioteca_de_jogos.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -75,39 +77,12 @@ namespace Biblioteca_de_jogos
 
         }
 
-        private void cbJogos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void lista_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void lblPubli_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnFavoritar_Click(object sender, EventArgs e)
-        {
-            if (cbJogos.SelectedItem == null)
-            {
-                MessageBox.Show("Selecione um jogo!");
-            }
-            else
-            {
-                if (lista.Items.Contains(cbJogos.Text)) // verificando se o item selecionado já não existe na lista
-                {
-                    MessageBox.Show("Jogo já favoritado!");
-                }
-                else
-                {
-
-                    lista.Items.Add(cbJogos.Text); // adicionando valores da combobox para listbox
-                }
-            }
+        private void cbJogos_SelectedIndexChanged_1(object sender, EventArgs e){
         }
 
         // botão para buscar dados do jogo selecionado da combobox
@@ -126,11 +101,19 @@ namespace Biblioteca_de_jogos
                 // O método será executado recebendo como parâmetro o return do método ObterDetalhes
                 // (que retorna o objeto gameDetails)
                 MostrarDados(GameService.ObterDetalhes(id));
+                
+                // tornando elementos visíveis
+                btnFavoritar.Visible = true;
+                lblLancamento.Visible = true;
+                lblGenero.Visible = true;
+                lblPubli.Visible = true;
+                lblDev.Visible = true;
+                lblNota.Visible = true;
             }
         }
 
         // método que irá transformar os elementos do form nos dados do jogo selecionado
-        private void MostrarDados(GameDetails gameDetails) // ele traz como parâmetro o objeto gameDetails
+        private void MostrarDados(GameDetails gameDetails) // novo objeto sendo instanciado como parâmetro
         {
             resLancamento.Text = gameDetails.released;
             resNota.Text = gameDetails.rating.ToString();
@@ -148,6 +131,36 @@ namespace Biblioteca_de_jogos
             {
                 resDev.Text = dev.name;
             }
+        }
+
+        private void btnFavoritar_Click(object sender, EventArgs e)
+        {
+            // verificando se há um jogo selecionado
+            if (cbJogos.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um jogo!");
+            }
+            else
+            {
+                FavoritarJogo();
+            }
+        }
+
+        private void FavoritarJogo()
+        {
+            string nome = cbJogos.Text;
+            bool jogoJaFavoritado = GameRepository.VerificarJogoJaFavoritado(nome);
+
+            if(jogoJaFavoritado == true)
+            {
+                MessageBox.Show($"Este jogo já está na sua lista!");
+            }
+            else
+            {
+                GameFavorito gameFavorito = GameFavoritoService.PostarFavorito(cbJogos.Text, resLancamento.Text, resNota.Text, resGenero.Text, resPubli.Text, resDev.Text);
+                MessageBox.Show($"{cbJogos.Text} está na sua lista de favoritos!");
+                btnFavoritar.Visible = false;
+            }    
         }
     }
 }

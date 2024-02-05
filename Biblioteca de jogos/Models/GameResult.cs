@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_de_jogos.Models
 {
-    internal class GameResult
+    public class GameResult
     {
         public List<GameDetails> results { get; set; }
     }
-    internal class GameDetails
+    public class GameDetails
     {
         public int id { get; set; }
         public string name { get; set; }
@@ -22,17 +22,17 @@ namespace Biblioteca_de_jogos.Models
         public List<Developer> developers { get; set; }
 
     }
-    internal class Gender
+    public class Gender
     {
         public string name { get; set; }
     }
 
-    internal class Publisher
+    public class Publisher
     {
         public string name { get; set; }
     }
 
-    internal class Developer
+    public class Developer
     {
         public string name { get; set; }
     }

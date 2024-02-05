@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Biblioteca_de_jogos.Repository;
 
 namespace Biblioteca_de_jogos
 {
@@ -19,6 +20,9 @@ namespace Biblioteca_de_jogos
         {
             InitializeComponent();
             CenterToScreen(); // Inicia o form centralizado
+
+            // Conectando com o banco de dados ao iniciar
+            GameRepository.Conectar();
         }
 
         private void label1_Click(object sender, EventArgs e)
