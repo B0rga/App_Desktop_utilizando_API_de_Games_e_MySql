@@ -1,0 +1,2 @@
+# The Game Library
+Nesta aplicação Windows Forms, estou coletando dados da RAWG API, uma imensa database online de video games. Por meio de uma interface amigável, o usuário será capaz de escolher seus jogos e obter todas suas informações, como data de lançamento, gênero, publicadora, desenvolvedora e nota da crítica. E não para por aí! O usuário poderá favoritar os jogos que ele mais achou interessante, sendo adicionados a sua "whishlist". Estes jogos favoritos serão armazenados no banco de dados Mysql, o qual é criado dentro da própria aplicação. 
