@@ -27,28 +27,36 @@ namespace Biblioteca_de_jogos
 
         private void MeusFavoritos_Load(object sender, EventArgs e)
         {
-            // lista recebendo os nomes do jogos favoritos do banco de dados
+            // variável do tipo lista recebendo os nomes do jogos favoritos do banco de dados
             List<string> listaNomes = GameRepository.ReceberDados();
 
-            foreach(string nome in listaNomes)
+            // Não é possível editar uma listbox com uma datasource definida
+            // (listaFavoritos.DataSource = GameRepository.ReceberDados();)
+            // Ou seja, desta forma, não seria possível remover seu elementos em tempo real.
+            // Como uma forma de contornar esta situação, eu recebo os dados através de uma List<string>
+            // e adiciono eles para a listbox por meio de um foreach
+            foreach (string nome in listaNomes)
             {
                 listaFavoritos.Items.Add(nome);
             }
 
             // listbox iniciando sem que haja um item selecionado
-            listaFavoritos.SelectedIndex = -1;
+            listaFavoritos.ClearSelected();
         }
 
-        public void abrirBuscarJogos(object obj) // método para a iniciar outro form
+        // método para a iniciar outro form
+        public void abrirBuscarJogos(object obj)
         {
             Application.Run(new BuscarJogos()); // inicia o form BuscarJogos
         }
 
-        public void abrirTelaInicial(object obg) // método para a iniciar outro form
+        // método para a iniciar outro form
+        public void abrirTelaInicial(object obg)
         {
             Application.Run(new TelaInicial()); // inicia o form TelaInicial
         }
 
+        // botão do menu que leva até a tela de buscar jogos
         private void btnBuscarJogos_Click(object sender, EventArgs e)
         {
             this.Close(); // fechando tela atual
@@ -57,6 +65,7 @@ namespace Biblioteca_de_jogos
             t1.Start(); // executando a thread t1 (executando o form BuscarJogos)
         }
 
+        // botão do menu que leva até a tela inicial
         private void btnTelaInicial_Click(object sender, EventArgs e)
         {
             this.Close(); // fechando tela atual
@@ -65,55 +74,48 @@ namespace Biblioteca_de_jogos
             t1.Start(); // executando a thread t1 (executando o form TelaInicial)
         }
 
+        // botão que irá remover o jogo selecionado da lista de favoritos (tanto da listbox quando do banco de dados)
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            string nome = listaFavoritos.Text;
-            GameRepository.DeletarDados(nome);
-            listaFavoritos.Items.Remove(listaFavoritos.SelectedItem);
+            string nome = listaFavoritos.Text; // variável recebendo o nome do jogo selecionado
+            GameRepository.DeletarDados(nome); // deletando jogo do banco
+            listaFavoritos.Items.Remove(listaFavoritos.SelectedItem); // removendo o jogo da listbox em tempo real
 
             MessageBox.Show($"{nome} foi removido da sua lista de favoritos.");
+
+            lblLancamento.Visible = false;
+            lblGenero.Visible = false;
+            lblPubli.Visible = false;
+            lblDev.Visible = false;
+            lblNota.Visible = false;
+            btnRemover.Visible = false;
         }
 
+        // seleção da list box irá chamar o método para exibir detalhes do jogo selecionado
         private void listaFavoritos_SelectedIndexChanged(object sender, EventArgs e)
         {
             string nome = listaFavoritos.Text;
+
+            // o método recebe como parâmetro os dados do return de BuscarDados, que seria um novo objeto de GameFavorito
             MostrarDados(GameRepository.BuscarDados(nome));
         }
 
-        public void MostrarDados(GameFavorito gameFavorito) // novo objeto sendo instanciado como parâmetro
+        public void MostrarDados(GameFavorito gameFavorito) // novo objeto de GameFavorito sendo instanciado como parâmetro
         {   
-            // os dados apenas serão exibidos na tela se houver um jogo selecionado
-            if(listaFavoritos.SelectedIndex == -1)
-            {
-                lblLancamento.Visible = false;
-                lblGenero.Visible = false;
-                lblPubli.Visible = false;
-                lblDev.Visible = false;
-                lblNota.Visible = false;
+            lblLancamento.Visible = true;
+            lblGenero.Visible = true;
+            lblPubli.Visible = true;
+            lblDev.Visible = true;
+            lblNota.Visible = true;
+            btnRemover.Visible = true;
 
-                resLancamento.Text = null;
-                resNota.Text = null;
-                resGenero.Text = null;
-                resPubli.Text = null;
-                resDev.Text = null;
-                resNota.Text = null;
-            }
-            else
-            {
-                lblLancamento.Visible = true;
-                lblGenero.Visible = true;
-                lblPubli.Visible = true;
-                lblDev.Visible = true;
-                lblNota.Visible = true;
-
-                // elementos recebendo valores do novo objeto
-                resLancamento.Text = gameFavorito.released;
-                resNota.Text = gameFavorito.rating;
-                resGenero.Text = gameFavorito.genre;
-                resPubli.Text = gameFavorito.publisher;
-                resDev.Text = gameFavorito.developer;
-                resNota.Text = gameFavorito.rating;
-            }
+            // elementos recebendo valores do novo objeto
+            resLancamento.Text = gameFavorito.released;
+            resNota.Text = gameFavorito.rating;
+            resGenero.Text = gameFavorito.genre;
+            resPubli.Text = gameFavorito.publisher;
+            resDev.Text = gameFavorito.developer;
+            resNota.Text = gameFavorito.rating;
         }
     }
 }

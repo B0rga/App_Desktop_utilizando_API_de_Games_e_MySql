@@ -76,21 +76,24 @@
             this.btnMeusFavoritos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(575, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(814, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // btnTelaInicial
             // 
+            this.btnTelaInicial.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTelaInicial.Name = "btnTelaInicial";
-            this.btnTelaInicial.Size = new System.Drawing.Size(70, 20);
-            this.btnTelaInicial.Text = "TelaInicial";
+            this.btnTelaInicial.Size = new System.Drawing.Size(84, 20);
+            this.btnTelaInicial.Text = "Tela Inicial";
             this.btnTelaInicial.Click += new System.EventHandler(this.btnTelaInicial_Click);
             // 
             // btnMeusFavoritos
             // 
+            this.btnMeusFavoritos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMeusFavoritos.Name = "btnMeusFavoritos";
-            this.btnMeusFavoritos.Size = new System.Drawing.Size(99, 20);
+            this.btnMeusFavoritos.Size = new System.Drawing.Size(113, 20);
             this.btnMeusFavoritos.Text = "Meus Favoritos";
             this.btnMeusFavoritos.Click += new System.EventHandler(this.btnMeusFavoritos_Click);
             // 
@@ -98,7 +101,8 @@
             // 
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitle.Location = new System.Drawing.Point(14, 69);
+            this.lblSubtitle.Location = new System.Drawing.Point(18, 70);
+            this.lblSubtitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubtitle.Name = "lblSubtitle";
             this.lblSubtitle.Size = new System.Drawing.Size(445, 18);
             this.lblSubtitle.TabIndex = 10;
@@ -107,10 +111,11 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(12, 34);
+            this.lblTitle.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(16, 35);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(159, 29);
+            this.lblTitle.Size = new System.Drawing.Size(171, 29);
             this.lblTitle.TabIndex = 9;
             this.lblTitle.Text = "Buscar Jogos";
             // 
@@ -130,10 +135,11 @@
             // lblLancamento
             // 
             this.lblLancamento.AutoSize = true;
-            this.lblLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLancamento.Location = new System.Drawing.Point(25, 195);
+            this.lblLancamento.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLancamento.Location = new System.Drawing.Point(22, 203);
+            this.lblLancamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLancamento.Name = "lblLancamento";
-            this.lblLancamento.Size = new System.Drawing.Size(95, 16);
+            this.lblLancamento.Size = new System.Drawing.Size(115, 18);
             this.lblLancamento.TabIndex = 13;
             this.lblLancamento.Text = "Lançamento:";
             this.lblLancamento.Visible = false;
@@ -141,10 +147,11 @@
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
-            this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenero.Location = new System.Drawing.Point(24, 222);
+            this.lblGenero.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGenero.Location = new System.Drawing.Point(21, 235);
+            this.lblGenero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(62, 16);
+            this.lblGenero.Size = new System.Drawing.Size(73, 18);
             this.lblGenero.TabIndex = 14;
             this.lblGenero.Text = "Gênero:";
             this.lblGenero.Visible = false;
@@ -152,10 +159,11 @@
             // lblNota
             // 
             this.lblNota.AutoSize = true;
-            this.lblNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNota.Location = new System.Drawing.Point(24, 316);
+            this.lblNota.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNota.Location = new System.Drawing.Point(21, 332);
+            this.lblNota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNota.Name = "lblNota";
-            this.lblNota.Size = new System.Drawing.Size(112, 16);
+            this.lblNota.Size = new System.Drawing.Size(131, 18);
             this.lblNota.TabIndex = 15;
             this.lblNota.Text = "Nota da crítica:";
             this.lblNota.Visible = false;
@@ -163,35 +171,40 @@
             // resLancamento
             // 
             this.resLancamento.AutoSize = true;
-            this.resLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resLancamento.Location = new System.Drawing.Point(164, 195);
+            this.resLancamento.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resLancamento.Location = new System.Drawing.Point(184, 203);
+            this.resLancamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resLancamento.Name = "resLancamento";
-            this.resLancamento.Size = new System.Drawing.Size(0, 16);
+            this.resLancamento.Size = new System.Drawing.Size(0, 18);
             this.resLancamento.TabIndex = 17;
             // 
             // resGenero
             // 
             this.resGenero.AutoSize = true;
-            this.resGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resGenero.Location = new System.Drawing.Point(164, 222);
+            this.resGenero.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resGenero.Location = new System.Drawing.Point(184, 235);
+            this.resGenero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resGenero.Name = "resGenero";
-            this.resGenero.Size = new System.Drawing.Size(0, 16);
+            this.resGenero.Size = new System.Drawing.Size(0, 18);
             this.resGenero.TabIndex = 18;
             // 
             // resNota
             // 
             this.resNota.AutoSize = true;
-            this.resNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resNota.Location = new System.Drawing.Point(164, 316);
+            this.resNota.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resNota.Location = new System.Drawing.Point(184, 332);
+            this.resNota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resNota.Name = "resNota";
-            this.resNota.Size = new System.Drawing.Size(0, 16);
+            this.resNota.Size = new System.Drawing.Size(0, 18);
             this.resNota.TabIndex = 19;
             // 
             // btnFavoritar
             // 
-            this.btnFavoritar.Location = new System.Drawing.Point(128, 149);
+            this.btnFavoritar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFavoritar.Location = new System.Drawing.Point(233, 150);
+            this.btnFavoritar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFavoritar.Name = "btnFavoritar";
-            this.btnFavoritar.Size = new System.Drawing.Size(93, 23);
+            this.btnFavoritar.Size = new System.Drawing.Size(146, 23);
             this.btnFavoritar.TabIndex = 20;
             this.btnFavoritar.Text = "Favoritar";
             this.btnFavoritar.UseVisualStyleBackColor = true;
@@ -200,9 +213,11 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(17, 149);
+            this.btnBuscar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(21, 150);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(93, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(145, 23);
             this.btnBuscar.TabIndex = 22;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -219,9 +234,10 @@
             // 
             // imgGames
             // 
-            this.imgGames.Location = new System.Drawing.Point(292, 225);
+            this.imgGames.Location = new System.Drawing.Point(406, 175);
+            this.imgGames.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.imgGames.Name = "imgGames";
-            this.imgGames.Size = new System.Drawing.Size(271, 168);
+            this.imgGames.Size = new System.Drawing.Size(355, 205);
             this.imgGames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgGames.TabIndex = 23;
             this.imgGames.TabStop = false;
@@ -231,13 +247,14 @@
             this.cbJogos.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.resultsBindingSource, "id", true));
             this.cbJogos.DataSource = this.gameDetailsBindingSource1;
             this.cbJogos.DisplayMember = "name";
+            this.cbJogos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbJogos.FormattingEnabled = true;
-            this.cbJogos.Location = new System.Drawing.Point(17, 112);
+            this.cbJogos.Location = new System.Drawing.Point(22, 113);
+            this.cbJogos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbJogos.Name = "cbJogos";
-            this.cbJogos.Size = new System.Drawing.Size(204, 21);
+            this.cbJogos.Size = new System.Drawing.Size(357, 22);
             this.cbJogos.TabIndex = 24;
             this.cbJogos.ValueMember = "id";
-            this.cbJogos.SelectedIndexChanged += new System.EventHandler(this.cbJogos_SelectedIndexChanged_1);
             // 
             // gameDetailsBindingSource1
             // 
@@ -255,10 +272,11 @@
             // lblDev
             // 
             this.lblDev.AutoSize = true;
-            this.lblDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDev.Location = new System.Drawing.Point(24, 284);
+            this.lblDev.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDev.Location = new System.Drawing.Point(21, 298);
+            this.lblDev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDev.Name = "lblDev";
-            this.lblDev.Size = new System.Drawing.Size(126, 16);
+            this.lblDev.Size = new System.Drawing.Size(146, 18);
             this.lblDev.TabIndex = 25;
             this.lblDev.Text = "Desenvolvedora:";
             this.lblDev.Visible = false;
@@ -266,38 +284,41 @@
             // lblPubli
             // 
             this.lblPubli.AutoSize = true;
-            this.lblPubli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPubli.Location = new System.Drawing.Point(24, 252);
+            this.lblPubli.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPubli.Location = new System.Drawing.Point(21, 266);
+            this.lblPubli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPubli.Name = "lblPubli";
-            this.lblPubli.Size = new System.Drawing.Size(95, 16);
+            this.lblPubli.Size = new System.Drawing.Size(108, 18);
             this.lblPubli.TabIndex = 26;
             this.lblPubli.Text = "Publicadora:";
             this.lblPubli.Visible = false;
-            this.lblPubli.Click += new System.EventHandler(this.lblPubli_Click);
             // 
             // resPubli
             // 
             this.resPubli.AutoSize = true;
-            this.resPubli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resPubli.Location = new System.Drawing.Point(164, 252);
+            this.resPubli.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resPubli.Location = new System.Drawing.Point(184, 266);
+            this.resPubli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resPubli.Name = "resPubli";
-            this.resPubli.Size = new System.Drawing.Size(0, 16);
+            this.resPubli.Size = new System.Drawing.Size(0, 18);
             this.resPubli.TabIndex = 27;
             // 
             // resDev
             // 
             this.resDev.AutoSize = true;
-            this.resDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resDev.Location = new System.Drawing.Point(163, 284);
+            this.resDev.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resDev.Location = new System.Drawing.Point(183, 298);
+            this.resDev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.resDev.MaximumSize = new System.Drawing.Size(210, 0);
             this.resDev.Name = "resDev";
-            this.resDev.Size = new System.Drawing.Size(0, 16);
+            this.resDev.Size = new System.Drawing.Size(0, 18);
             this.resDev.TabIndex = 28;
             // 
             // BuscarJogos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 412);
+            this.ClientSize = new System.Drawing.Size(814, 427);
             this.Controls.Add(this.resDev);
             this.Controls.Add(this.resPubli);
             this.Controls.Add(this.lblPubli);
@@ -315,7 +336,9 @@
             this.Controls.Add(this.lblSubtitle);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "BuscarJogos";
             this.Text = "Buscar Jogos";
             this.Load += new System.EventHandler(this.Form2_Load);

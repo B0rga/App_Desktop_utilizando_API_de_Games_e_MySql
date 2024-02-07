@@ -54,7 +54,7 @@ namespace Biblioteca_de_jogos
             Application.Run(new TelaInicial()); // inicia o form TelaInicial
         }
 
-        // botão do menu que leva até tela de favoritos
+        // botão do menu que leva até a tela de favoritos
         private void btnMeusFavoritos_Click(object sender, EventArgs e) 
         {
             this.Close(); // fechando tela atual
@@ -63,26 +63,13 @@ namespace Biblioteca_de_jogos
             t1.Start(); // executando a thread t1 (executando o form MeusFavoritos)
         }
 
-        // botão do menu que leva até tela inicial
+        // botão do menu que leva até a tela inicial
         private void btnTelaInicial_Click(object sender, EventArgs e) 
         {
             this.Close(); // fechando tela atual
             t1 = new Thread(abrirTelaInicial); // instanciando o objeto da Thread e referencando o método que será utilizado
             t1.SetApartmentState(ApartmentState.STA);
             t1.Start(); // executando a thread t1 (executando o form TelaInicial)
-        }
-
-        private void lblNome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPubli_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbJogos_SelectedIndexChanged_1(object sender, EventArgs e){
         }
 
         // botão para buscar dados do jogo selecionado da combobox
@@ -94,7 +81,7 @@ namespace Biblioteca_de_jogos
             }
             else
             {
-                // variável "id" está recebendo o id associado ao nome do jogo exibido na combobox
+                // a variável abaixo está recebendo o id associado ao nome do jogo selecionado na combobox
                 string id = cbJogos.SelectedValue.ToString();
 
                 // logo após eu utilizo este id para fazer a requisição dos dados deste jogo.
@@ -119,7 +106,7 @@ namespace Biblioteca_de_jogos
             resNota.Text = gameDetails.rating.ToString();
             imgGames.ImageLocation = gameDetails.background_image;
 
-            foreach(var genre in gameDetails.genres)
+            foreach (var genre in gameDetails.genres)
             {
                 resGenero.Text = genre.name;
             }
@@ -133,6 +120,7 @@ namespace Biblioteca_de_jogos
             }
         }
 
+        // botão que que chamará o método de favoritar o jogo selecionado
         private void btnFavoritar_Click(object sender, EventArgs e)
         {
             // verificando se há um jogo selecionado
@@ -146,20 +134,26 @@ namespace Biblioteca_de_jogos
             }
         }
 
+        // método que irá lançar o jogo selecionado e seus dados para o banco de dados
         private void FavoritarJogo()
         {
             string nome = cbJogos.Text;
+
+            // a variável abaixo está recebendo o return de um método booleano para verificar
+            // se o jogo selecionado já está favoritado (se já está ou não no banco de dados)
             bool jogoJaFavoritado = GameRepository.VerificarJogoJaFavoritado(nome);
 
-            if(jogoJaFavoritado == true)
+            if(jogoJaFavoritado == false)
+            {
+                // se o jogo não estiver favoritado, o método de POST será chamado para enviar
+                // os dados do jogo uma API ao mesmo tempo que os envia para o banco de dados
+                GameFavoritoService.PostarFavorito(cbJogos.Text, resLancamento.Text, resNota.Text, resGenero.Text, resPubli.Text, resDev.Text);
+                MessageBox.Show($"{cbJogos.Text} agora está na sua lista de favoritos!");
+                btnFavoritar.Visible = false;
+            }
+            else if(jogoJaFavoritado == true)
             {
                 MessageBox.Show($"Este jogo já está na sua lista!");
-            }
-            else
-            {
-                GameFavorito gameFavorito = GameFavoritoService.PostarFavorito(cbJogos.Text, resLancamento.Text, resNota.Text, resGenero.Text, resPubli.Text, resDev.Text);
-                MessageBox.Show($"{cbJogos.Text} está na sua lista de favoritos!");
-                btnFavoritar.Visible = false;
             }    
         }
     }
