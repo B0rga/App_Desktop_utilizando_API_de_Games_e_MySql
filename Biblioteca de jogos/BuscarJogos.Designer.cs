@@ -247,10 +247,14 @@
             this.cbJogos.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.resultsBindingSource, "id", true));
             this.cbJogos.DataSource = this.gameDetailsBindingSource1;
             this.cbJogos.DisplayMember = "name";
+            this.cbJogos.DropDownHeight = 268;
+            this.cbJogos.DropDownWidth = 357;
             this.cbJogos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbJogos.FormattingEnabled = true;
+            this.cbJogos.IntegralHeight = false;
             this.cbJogos.Location = new System.Drawing.Point(22, 113);
             this.cbJogos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbJogos.MaxLength = 100;
             this.cbJogos.Name = "cbJogos";
             this.cbJogos.Size = new System.Drawing.Size(357, 22);
             this.cbJogos.TabIndex = 24;

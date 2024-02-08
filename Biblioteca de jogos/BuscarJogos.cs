@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Media;
 
 namespace Biblioteca_de_jogos
 {
@@ -77,6 +78,9 @@ namespace Biblioteca_de_jogos
         {
             // verificando se há um jogo selecionado
             if(cbJogos.SelectedItem == null){
+
+                SoundPlayer error = new SoundPlayer(@"C:\C#\ProjetosForms\Biblioteca de jogos\Sons\error.wav");
+                error.Play();
                 MessageBox.Show("Selecione um jogo!");
             }
             else
@@ -148,12 +152,19 @@ namespace Biblioteca_de_jogos
                 // se o jogo não estiver favoritado, o método de POST será chamado para enviar
                 // os dados do jogo uma API ao mesmo tempo que os envia para o banco de dados
                 GameFavoritoService.PostarFavorito(cbJogos.Text, resLancamento.Text, resNota.Text, resGenero.Text, resPubli.Text, resDev.Text);
+
+                SoundPlayer success = new SoundPlayer(@"C:\C#\ProjetosForms\Biblioteca de jogos\Sons\bell.wav");
+                success.Play();
                 MessageBox.Show($"{cbJogos.Text} agora está na sua lista de favoritos!");
+
                 btnFavoritar.Visible = false;
+                
             }
             else if(jogoJaFavoritado == true)
             {
-                MessageBox.Show($"Este jogo já está na sua lista!");
+                SoundPlayer error = new SoundPlayer(@"C:\C#\ProjetosForms\Biblioteca de jogos\Sons\error.wav");
+                error.Play();
+                MessageBox.Show($"Este jogo já está na sua lista!");                
             }    
         }
     }

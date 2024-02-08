@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Biblioteca_de_jogos
 {
@@ -81,6 +82,8 @@ namespace Biblioteca_de_jogos
             GameRepository.DeletarDados(nome); // deletando jogo do banco
             listaFavoritos.Items.Remove(listaFavoritos.SelectedItem); // removendo o jogo da listbox em tempo real
 
+            SoundPlayer removed = new SoundPlayer(@"C:\C#\ProjetosForms\Biblioteca de jogos\Sons\alert.wav");
+            removed.Play();
             MessageBox.Show($"{nome} foi removido da sua lista de favoritos.");
 
             lblLancamento.Visible = false;
